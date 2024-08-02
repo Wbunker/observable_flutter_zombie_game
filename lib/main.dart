@@ -2,33 +2,19 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:observable_zombies/zombie_game.dart';
 
-void main() {
-  runApp(const MainApp());
+void main() async {
+  final FlameGame game = ZombieGame();
+  runApp(MainApp(game: game));
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  const MainApp({super.key, required this.game});
+  final FlameGame game;
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyHomePage(),
+    return MaterialApp(
+      home: GameWidget(game: game),
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({
-    super.key,
-  });
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return GameWidget(game: ZombieGame());
   }
 }
