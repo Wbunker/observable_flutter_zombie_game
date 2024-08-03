@@ -14,6 +14,8 @@ class ZombieGame extends FlameGame with HasKeyboardHandlerComponents {
     images.prefix = '';
   }
 
+  Vector2 get worldSize => _world.size;
+
   @override
   Future<void> onLoad() async {
     await images.loadAll([
@@ -21,10 +23,7 @@ class ZombieGame extends FlameGame with HasKeyboardHandlerComponents {
       Assets.town.tile0000.path,
     ]);
 
-    cameraComponent.viewfinder.anchor = Anchor.center;
-    await add(_world);
     add(cameraComponent);
-
-    cameraComponent.follow(_world.player);
+    add(_world);
   }
 }

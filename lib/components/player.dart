@@ -1,39 +1,54 @@
 import 'package:flame/components.dart';
 import 'package:flutter/services.dart';
+import 'package:observable_zombies/constants.dart';
+import 'package:observable_zombies/gen/assets.gen.dart';
+import 'package:observable_zombies/zombie_game.dart';
 
-class Player extends SpriteComponent with KeyboardHandler {
-  Player({super.position, super.sprite}) : super(anchor: Anchor.center);
+class Player extends SpriteComponent
+    with KeyboardHandler, HasGameReference<ZombieGame> {
+  Player({super.position}) : super(anchor: Anchor.center) {
+    halfSize = size / 2;
+  }
 
   Vector2 movement = Vector2.zero();
-  double speed = 10;
+  double speed = tilesPerSecond * worldTileSize;
+  late Vector2 halfSize;
+  late Vector2 maxPosition;
+
+  @override
+  void onLoad() {
+    position = Vector2(worldTileSize * 12.6, worldTileSize * 5.5);
+    maxPosition = game.worldSize - halfSize;
+    sprite = Sprite(game.images
+        .fromCache(Assets.characters.adventurer.adventurerTilesheet.path));
+  }
 
   @override
   void update(double dt) {
-    super.update(dt);
-    position += movement.normalized() * speed * dt;
+    position.add(movement.normalized() * speed * dt);
+    position.clamp(halfSize, maxPosition);
   }
 
   @override
   bool onKeyEvent(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
-    if (event is KeyDownEvent) {
-      if (keysPressed.contains(LogicalKeyboardKey.arrowUp)) {
-        movement = Vector2(movement.x, -1);
-        return true;
-      } else if (keysPressed.contains(LogicalKeyboardKey.arrowDown)) {
-        movement = Vector2(movement.x, 1);
-        return true;
-      } else if (keysPressed.contains(LogicalKeyboardKey.arrowLeft)) {
-        movement = Vector2(-1, movement.y);
-        return true;
-      } else if (keysPressed.contains(LogicalKeyboardKey.arrowRight)) {
-        movement = Vector2(1, movement.y);
-        return true;
-      }
-    } else if (event is KeyUpEvent) {
-      movement = Vector2.zero();
-      return true;
+    int yMovement = 0;
+    int xMovement = 0;
+    bool handled = false;
+    if (keysPressed.contains(LogicalKeyboardKey.arrowUp)) {
+      yMovement += -1;
+      handled = true;
+    } else if (keysPressed.contains(LogicalKeyboardKey.arrowDown)) {
+      yMovement += 1;
+      handled = true;
+    } else if (keysPressed.contains(LogicalKeyboardKey.arrowLeft)) {
+      xMovement += -1;
+      handled = true;
+    } else if (keysPressed.contains(LogicalKeyboardKey.arrowRight)) {
+      xMovement += 1;
+      handled = true;
     }
 
-    return false;
+    movement = Vector2(xMovement.toDouble(), yMovement.toDouble());
+    return handled;
   }
 }
