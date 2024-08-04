@@ -22,6 +22,27 @@ class ZombieWorld extends World with HasGameRef<ZombieGame> {
     scaledSize = Vector2(map.tileMap.map.width.toDouble() * worldTileSize,
         map.tileMap.map.height.toDouble() * worldTileSize);
 
+    final objectLayer = map.tileMap.getLayer<ObjectGroup>('Objects');
+
+    if (objectLayer != null) {
+      for (final TiledObject object in objectLayer.objects) {
+        if (!object.isPolygon) continue;
+
+        if (!object.properties.byName.containsKey('blocksMovement')) continue;
+
+        for (final Point point in object.polygon) {
+          final landTile = Land(
+            position: Vector2(
+              object.position.x + point.x,
+              object.position.y + point.y,
+            ),
+          );
+          add(landTile);
+          land.add(landTile);
+        }
+      }
+    }
+
     player = Player();
     add(player);
 
