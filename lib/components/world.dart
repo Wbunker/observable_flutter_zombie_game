@@ -30,16 +30,25 @@ class ZombieWorld extends World with HasGameRef<ZombieGame> {
 
         if (!object.properties.byName.containsKey('blocksMovement')) continue;
 
+        final vertices = <Vector2>[];
+        Vector2? nextPoint;
         for (final Point point in object.polygon) {
-          final landTile = Land(
-            position: Vector2(
-              object.position.x + point.x,
-              object.position.y + point.y,
-            ),
-          );
-          add(landTile);
-          land.add(landTile);
+          // add(
+          //   RectangleComponent(
+          //       position: Vector2(
+          //         (object.position.x + point.x) * worldScale,
+          //         (object.position.y + point.y) * worldScale,
+          //       ),
+          //       size: Vector2.all(worldTileSize),
+          //       paint: Paint()..color = Colors.red,
+          //       priority: 2,
+          //       anchor: Anchor.center),
+          // );
+          nextPoint = Vector2((point.x + object.x) * worldScale,
+              (point.y + object.y) * worldScale);
+          vertices.add(nextPoint);
         }
+        add(UnwalkableTerrain(vertices));
       }
     }
 

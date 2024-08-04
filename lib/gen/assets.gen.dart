@@ -708,6 +708,16 @@ class $AssetsDungeonGen {
       ];
 }
 
+class $AssetsTilesGen {
+  const $AssetsTilesGen();
+
+  /// File path: assets/tiles/world.tmx
+  String get world => 'assets/tiles/world.tmx';
+
+  /// List of all assets
+  List<String> get values => [world];
+}
+
 class $AssetsTownGen {
   const $AssetsTownGen();
 
@@ -1392,6 +1402,10 @@ class $AssetsTownGen {
 class $AssetsCharactersAdventurerGen {
   const $AssetsCharactersAdventurerGen();
 
+  /// Directory path: assets/characters/Adventurer/Poses
+  $AssetsCharactersAdventurerPosesGen get poses =>
+      const $AssetsCharactersAdventurerPosesGen();
+
   /// File path: assets/characters/Adventurer/adventurer_tilesheet.png
   AssetGenImage get adventurerTilesheet => const AssetGenImage(
       'assets/characters/Adventurer/adventurer_tilesheet.png');
@@ -1444,16 +1458,141 @@ class $AssetsCharactersZombieGen {
   List<AssetGenImage> get values => [zombieTilesheet];
 }
 
+class $AssetsCharactersAdventurerPosesGen {
+  const $AssetsCharactersAdventurerPosesGen();
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_action1.png
+  AssetGenImage get adventurerAction1 => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_action1.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_action2.png
+  AssetGenImage get adventurerAction2 => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_action2.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_back.png
+  AssetGenImage get adventurerBack => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_back.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_cheer1.png
+  AssetGenImage get adventurerCheer1 => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_cheer1.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_cheer2.png
+  AssetGenImage get adventurerCheer2 => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_cheer2.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_climb1.png
+  AssetGenImage get adventurerClimb1 => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_climb1.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_climb2.png
+  AssetGenImage get adventurerClimb2 => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_climb2.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_duck.png
+  AssetGenImage get adventurerDuck => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_duck.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_fall.png
+  AssetGenImage get adventurerFall => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_fall.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_hang.png
+  AssetGenImage get adventurerHang => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_hang.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_hold1.png
+  AssetGenImage get adventurerHold1 => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_hold1.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_hold2.png
+  AssetGenImage get adventurerHold2 => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_hold2.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_hurt.png
+  AssetGenImage get adventurerHurt => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_hurt.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_idle.png
+  AssetGenImage get adventurerIdle => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_idle.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_jump.png
+  AssetGenImage get adventurerJump => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_jump.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_kick.png
+  AssetGenImage get adventurerKick => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_kick.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_skid.png
+  AssetGenImage get adventurerSkid => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_skid.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_slide.png
+  AssetGenImage get adventurerSlide => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_slide.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_stand.png
+  AssetGenImage get adventurerStand => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_stand.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_swim1.png
+  AssetGenImage get adventurerSwim1 => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_swim1.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_swim2.png
+  AssetGenImage get adventurerSwim2 => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_swim2.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_talk.png
+  AssetGenImage get adventurerTalk => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_talk.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_walk1.png
+  AssetGenImage get adventurerWalk1 => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_walk1.png');
+
+  /// File path: assets/characters/Adventurer/Poses/adventurer_walk2.png
+  AssetGenImage get adventurerWalk2 => const AssetGenImage(
+      'assets/characters/Adventurer/Poses/adventurer_walk2.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        adventurerAction1,
+        adventurerAction2,
+        adventurerBack,
+        adventurerCheer1,
+        adventurerCheer2,
+        adventurerClimb1,
+        adventurerClimb2,
+        adventurerDuck,
+        adventurerFall,
+        adventurerHang,
+        adventurerHold1,
+        adventurerHold2,
+        adventurerHurt,
+        adventurerIdle,
+        adventurerJump,
+        adventurerKick,
+        adventurerSkid,
+        adventurerSlide,
+        adventurerStand,
+        adventurerSwim1,
+        adventurerSwim2,
+        adventurerTalk,
+        adventurerWalk1,
+        adventurerWalk2
+      ];
+}
+
 class Assets {
   Assets._();
 
-  static const AssetGenImage fireball1 = AssetGenImage('assets/Fireball1.png');
   static const $AssetsCharactersGen characters = $AssetsCharactersGen();
   static const $AssetsDungeonGen dungeon = $AssetsDungeonGen();
+  static const $AssetsTilesGen tiles = $AssetsTilesGen();
   static const $AssetsTownGen town = $AssetsTownGen();
-
-  /// List of all assets
-  static List<AssetGenImage> get values => [fireball1];
 }
 
 class AssetGenImage {

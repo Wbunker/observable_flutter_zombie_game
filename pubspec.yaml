@@ -37,6 +37,7 @@ flutter:
     - assets/town/
     - assets/dungeon/
     - assets/characters/Adventurer/
+    - assets/characters/Adventurer/Poses/
     - assets/characters/Zombie/
     - assets/characters/Soldier/
     - assets/characters/Female/

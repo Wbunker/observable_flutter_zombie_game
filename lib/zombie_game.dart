@@ -7,23 +7,26 @@ import 'gen/assets.gen.dart';
 
 class ZombieGame extends FlameGame with HasKeyboardHandlerComponents {
   late final CameraComponent cameraComponent;
-  final ZombieWorld _world;
+  final ZombieWorld zombieWorld;
 
-  ZombieGame() : _world = ZombieWorld() {
-    cameraComponent = CameraComponent(world: _world);
+  ZombieGame() : zombieWorld = ZombieWorld() {
+    cameraComponent = CameraComponent(world: zombieWorld);
     images.prefix = '';
   }
 
-  Vector2 get worldSize => _world.size;
+  Vector2 get worldSize => zombieWorld.size;
 
   @override
   Future<void> onLoad() async {
     await images.loadAll([
-      Assets.characters.adventurer.adventurerTilesheet.path,
+      Assets.characters.adventurer.poses.adventurerAction1.path,
       Assets.town.tile0000.path,
     ]);
 
-    add(cameraComponent);
-    add(_world);
+    // debugMode = true;
+    addAll([
+      zombieWorld,
+      cameraComponent,
+    ]);
   }
 }
