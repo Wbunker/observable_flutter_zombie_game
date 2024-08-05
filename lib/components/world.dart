@@ -3,6 +3,7 @@ import 'package:flame/experimental.dart';
 import 'package:flame/game.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:observable_zombies/components/components.dart';
+import 'package:observable_zombies/utilities/line.dart';
 import 'package:observable_zombies/constants.dart';
 import 'package:observable_zombies/zombie_game.dart';
 
@@ -11,6 +12,7 @@ class ZombieWorld extends World with HasGameRef<ZombieGame> {
 
   final List<Land> land = [];
   late final Player player;
+  final unwalkableTerrainEdges = <Line>[];
   late final TiledComponent<FlameGame<World>> map;
   late final Vector2 scaledSize;
 
@@ -31,29 +33,40 @@ class ZombieWorld extends World with HasGameRef<ZombieGame> {
         if (!object.properties.byName.containsKey('blocksMovement')) continue;
 
         final vertices = <Vector2>[];
+        Vector2? lastPoint;
         Vector2? nextPoint;
-        for (final Point point in object.polygon) {
-          // add(
-          //   RectangleComponent(
-          //       position: Vector2(
-          //         (object.position.x + point.x) * worldScale,
-          //         (object.position.y + point.y) * worldScale,
-          //       ),
-          //       size: Vector2.all(worldTileSize),
-          //       paint: Paint()..color = Colors.red,
-          //       priority: 2,
-          //       anchor: Anchor.center),
-          // );
+        Vector2? firstPoint;
+        for (final point in object.polygon) {
           nextPoint = Vector2((point.x + object.x) * worldScale,
               (point.y + object.y) * worldScale);
+          firstPoint ??= nextPoint;
           vertices.add(nextPoint);
+
+          // If there is a last point, or this is the end of the list, we have a
+          // line to add to our cached list of lines
+          if (lastPoint != null) {
+            final line = Line(lastPoint.clone(), nextPoint.clone());
+            unwalkableTerrainEdges.add(line);
+          }
+          lastPoint = nextPoint;
+        }
+        if (lastPoint != null && firstPoint != null) {
+          unwalkableTerrainEdges
+              .add(Line(lastPoint.clone(), firstPoint.clone()));
         }
         add(UnwalkableTerrain(vertices));
       }
     }
 
+    for (final line in unwalkableTerrainEdges) {
+      add(LineComponent.red(line: line, thickness: 3, debug: false));
+    }
+
+    final zombie =
+        Zombie(position: Vector2(worldTileSize * 16.6, worldTileSize * 7.5));
+
     player = Player();
-    add(player);
+    addAll([player, zombie]);
 
     gameRef.cameraComponent.follow(player);
   }

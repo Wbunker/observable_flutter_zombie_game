@@ -20,6 +20,7 @@ class ZombieGame extends FlameGame with HasKeyboardHandlerComponents {
   Future<void> onLoad() async {
     await images.loadAll([
       Assets.characters.adventurer.poses.adventurerAction1.path,
+      Assets.characters.zombie.poses.zombieCheer1.path,
       Assets.town.tile0000.path,
     ]);
 

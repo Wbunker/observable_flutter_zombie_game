@@ -1450,6 +1450,10 @@ class $AssetsCharactersSoldierGen {
 class $AssetsCharactersZombieGen {
   const $AssetsCharactersZombieGen();
 
+  /// Directory path: assets/characters/Zombie/Poses
+  $AssetsCharactersZombiePosesGen get poses =>
+      const $AssetsCharactersZombiePosesGen();
+
   /// File path: assets/characters/Zombie/zombie_tilesheet.png
   AssetGenImage get zombieTilesheet =>
       const AssetGenImage('assets/characters/Zombie/zombie_tilesheet.png');
@@ -1583,6 +1587,134 @@ class $AssetsCharactersAdventurerPosesGen {
         adventurerTalk,
         adventurerWalk1,
         adventurerWalk2
+      ];
+}
+
+class $AssetsCharactersZombiePosesGen {
+  const $AssetsCharactersZombiePosesGen();
+
+  /// File path: assets/characters/Zombie/Poses/zombie_action1.png
+  AssetGenImage get zombieAction1 =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_action1.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_action2.png
+  AssetGenImage get zombieAction2 =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_action2.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_back.png
+  AssetGenImage get zombieBack =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_back.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_cheer1.png
+  AssetGenImage get zombieCheer1 =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_cheer1.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_cheer2.png
+  AssetGenImage get zombieCheer2 =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_cheer2.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_climb1.png
+  AssetGenImage get zombieClimb1 =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_climb1.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_climb2.png
+  AssetGenImage get zombieClimb2 =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_climb2.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_duck.png
+  AssetGenImage get zombieDuck =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_duck.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_fall.png
+  AssetGenImage get zombieFall =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_fall.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_hang.png
+  AssetGenImage get zombieHang =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_hang.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_hold1.png
+  AssetGenImage get zombieHold1 =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_hold1.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_hold2.png
+  AssetGenImage get zombieHold2 =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_hold2.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_hurt.png
+  AssetGenImage get zombieHurt =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_hurt.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_idle.png
+  AssetGenImage get zombieIdle =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_idle.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_jump.png
+  AssetGenImage get zombieJump =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_jump.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_kick.png
+  AssetGenImage get zombieKick =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_kick.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_skid.png
+  AssetGenImage get zombieSkid =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_skid.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_slide.png
+  AssetGenImage get zombieSlide =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_slide.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_stand.png
+  AssetGenImage get zombieStand =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_stand.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_swim1.png
+  AssetGenImage get zombieSwim1 =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_swim1.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_swim2.png
+  AssetGenImage get zombieSwim2 =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_swim2.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_talk.png
+  AssetGenImage get zombieTalk =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_talk.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_walk1.png
+  AssetGenImage get zombieWalk1 =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_walk1.png');
+
+  /// File path: assets/characters/Zombie/Poses/zombie_walk2.png
+  AssetGenImage get zombieWalk2 =>
+      const AssetGenImage('assets/characters/Zombie/Poses/zombie_walk2.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        zombieAction1,
+        zombieAction2,
+        zombieBack,
+        zombieCheer1,
+        zombieCheer2,
+        zombieClimb1,
+        zombieClimb2,
+        zombieDuck,
+        zombieFall,
+        zombieHang,
+        zombieHold1,
+        zombieHold2,
+        zombieHurt,
+        zombieIdle,
+        zombieJump,
+        zombieKick,
+        zombieSkid,
+        zombieSlide,
+        zombieStand,
+        zombieSwim1,
+        zombieSwim2,
+        zombieTalk,
+        zombieWalk1,
+        zombieWalk2
       ];
 }
 

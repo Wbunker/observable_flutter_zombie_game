@@ -7,10 +7,12 @@ environment:
   sdk: '>=3.4.4 <4.0.0'
 
 dependencies:
+  equatable: ^2.0.5
   flame: ^1.18.0
   flame_tiled: ^1.20.2
   flutter:
     sdk: flutter
+  vector_math: ^2.1.4
 
 dev_dependencies:
   build_runner: ^2.4.11
@@ -39,6 +41,7 @@ flutter:
     - assets/characters/Adventurer/
     - assets/characters/Adventurer/Poses/
     - assets/characters/Zombie/
+    - assets/characters/Zombie/Poses/
     - assets/characters/Soldier/
     - assets/characters/Female/
     - assets/characters/Player/
