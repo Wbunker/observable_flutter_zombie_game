@@ -3,7 +3,7 @@ import 'package:flame/experimental.dart';
 import 'package:flame/game.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:observable_zombies/components/components.dart';
-import 'package:observable_zombies/utilities/line.dart';
+import 'package:observable_zombies/utilities/utilities.dart';
 import 'package:observable_zombies/constants.dart';
 import 'package:observable_zombies/zombie_game.dart';
 

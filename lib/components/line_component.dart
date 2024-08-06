@@ -1,7 +1,7 @@
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
 import 'package:observable_zombies/components/components.dart';
-import 'package:observable_zombies/utilities/line.dart';
+import 'package:observable_zombies/utilities/utilities.dart';
 import 'package:observable_zombies/zombie_game.dart';
 
 class LineComponent extends CustomPainterComponent
